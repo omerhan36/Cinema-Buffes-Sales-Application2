@@ -18,13 +18,29 @@ namespace Cinema_Buffes_Sales_Application2
         }
         int tilltutar = 0;
 
-        private void button1_Click(object sender, EventArgs e, int v)
+        private void button1_Click(object sender, EventArgs e)
         {
             int popcorn, ticket, water, tea, fruitjuice, total, til;
-            popcorn = Convert.ToInt16(txtpopcorn.Text);
+
+            if (string.IsNullOrEmpty(txtpopcorn.Text))
+                popcorn = 0;
+            else
+                popcorn = Convert.ToInt16(txtpopcorn.Text);
+            if (string.IsNullOrEmpty(TxtTicket.Text))
+                ticket = 0;
+            else
             ticket = Convert.ToInt16(TxtTicket.Text);
-            water= Convert.ToInt16(TxtWater.Text);
+            if (string.IsNullOrEmpty(TxtWater.Text))
+                water = 0;
+            else
+            water = Convert.ToInt16(TxtWater.Text);
+            if (string.IsNullOrEmpty(TxtTea.Text))
+                tea = 0;
+            else
             tea = Convert.ToInt16(TxtTea.Text);
+            if (string.IsNullOrEmpty(TxtFruitJuice.Text))
+                fruitjuice = 0;
+            else 
             fruitjuice = Convert.ToInt16(TxtFruitJuice.Text);
 
             total = popcorn * 2 + tea * 1 + water * 1 + ticket * 3 + fruitjuice * 4;
@@ -44,5 +60,7 @@ namespace Cinema_Buffes_Sales_Application2
             LblBill.Text = "00$";
             txtpopcorn.Focus();
         }
+
+
     }
 }
