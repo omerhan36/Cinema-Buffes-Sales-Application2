@@ -37,7 +37,7 @@ namespace Cinema_Buffes_Sales_Application2
             if (string.IsNullOrEmpty(TxtTea.Text))
                 tea = 0;
             else
-            tea = Convert.ToInt16(TxtTea.Text);
+                tea = Convert.ToInt16(TxtTea.Text);
             if (string.IsNullOrEmpty(TxtFruitJuice.Text))
                 fruitjuice = 0;
             else 
